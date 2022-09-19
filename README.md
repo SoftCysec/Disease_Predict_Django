@@ -1,0 +1,1 @@
+# Disease_Predict_Django
