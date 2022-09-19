@@ -3,7 +3,7 @@
 
 A web app for heart disease prediction, diabetes prediction and breast cancer prediciton using Machine Learning based on the Kaggle Datasets. 
 ### Database Structure
-
+![Pr](https://user-images.githubusercontent.com/108905313/191060928-3151d464-351b-4c53-8f69-ed34b53c978e.PNG)
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
