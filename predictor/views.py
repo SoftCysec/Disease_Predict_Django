@@ -8,19 +8,10 @@ from predictor.forms import BreastCancerForm, DiabetesForm, HeartDiseaseForm
 
 
 def heart(request):
-    """ 
-    18:39:18 09 Oct, 2019 by Arjun Adhikari
-    Reading the training data set. 
-    """
     df = pd.read_csv('static/Heart_train.csv')
     data = df.values
     X = data[:, :-1]
     Y = data[:, -1:]
-
-    """ 
-    18:39:18 09 Oct, 2019 by Arjun Adhikari
-    Reading data from the user. 
-    """
 
     value = ''
 
@@ -83,20 +74,12 @@ def heart(request):
 
 
 def diabetes(request):
-    """ 
-    20:13:20 09 Oct, 2019 by Arjun Adhikari
-    Reading the training data set. 
-    """
     dfx = pd.read_csv('static/Diabetes_XTrain.csv')
     dfy = pd.read_csv('static/Diabetes_YTrain.csv')
     X = dfx.values
     Y = dfy.values
     Y = Y.reshape((-1,))
 
-    """ 
-    20:18:20 09 Oct, 2019 by Arjun Adhikari
-    Reading data from user. 
-    """
     value = ''
     if request.method == 'POST':
 
@@ -143,20 +126,12 @@ def diabetes(request):
 
 
 def breast(request):
-    """ 
-    20:56:20 09 Oct, 2019 by Arjun Adhikari
-    Reading training data set. 
-    """
     df = pd.read_csv('static/Breast_train.csv')
     data = df.values
     X = data[:, :-1]
     Y = data[:, -1]
     print(X.shape, Y.shape)
-
-    """ 
-    20:57:20 09 Oct, 2019 by Arjun Adhikari
-    Reading data from user. 
-    """
+    
     value = ''
     if request.method == 'POST':
 
@@ -166,10 +141,6 @@ def breast(request):
         area = float(request.POST['area'])
         smoothness = float(request.POST['smoothness'])
 
-        """ 
-        21:02:21 09 Oct, 2019 by Arjun Adhikari
-        Creating our training model. 
-        """
         rf = RandomForestClassifier(
             n_estimators=16, criterion='entropy', max_depth=5)
         rf.fit(np.nan_to_num(X), Y)
@@ -205,12 +176,6 @@ def home(request):
 
     return render(request,
                   'home.html')
-
-
-""" 
-20:07:20 10 Oct, 2019 by Arjun Adhikari
-Handling 404 error pages. 
-"""
 
 
 def handler404(request):
