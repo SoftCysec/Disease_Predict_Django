@@ -24,14 +24,13 @@ SECRET_KEY = '0q%_w$%ysprytbnz%%9_(onevk$8-151sa@#)$ri19hk+ie36a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','*']
+ALLOWED_HOSTS = ['127.0.0.1','https://diseasepredictdjango-production.up.railway.app/']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'adminlte3',
-    'adminlte3_theme',
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
